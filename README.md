@@ -1,2 +1,0 @@
-# Guxi_blog
-blog
