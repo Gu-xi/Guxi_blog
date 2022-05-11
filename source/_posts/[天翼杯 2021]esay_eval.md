@@ -1,7 +1,7 @@
 ---
-title: [天翼杯 2021]esay_eval
+title: 天翼杯2021 esay_eval
 date: 2022-05-11 20:41:07
-tags:
+tags: 
     - CTF
 categories: CTF
 my: esay_eval
