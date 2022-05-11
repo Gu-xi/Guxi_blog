@@ -1,14 +1,14 @@
 /* 深色模式按钮设置 */
 #sma {
-    box-shadow: #aaa 2px 5px 10px;
+    box-shadow: #aaa 1px 3px 19px;
     background: #000;
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     display: block;
     position: fixed;
     border-radius: 50%;
-    right: 15px;
-    bottom: 100px;
+    right: 0.39cm;
+    bottom: 88px;
     padding-top: 15px;
     margin-bottom: 0;
     z-index: 998;
@@ -24,7 +24,7 @@
 
 #sma .fa-lightbulb {
     position: absolute;
-    right: 11px;
+    right: 12px;
     bottom: 8px;
     font-size: 1.5rem !important;
 }

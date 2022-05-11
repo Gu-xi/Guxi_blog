@@ -187,8 +187,8 @@ reward:
 # minCharNumber: Approve copyright information by copying at least how many characters.
 # 是否激活复制文章时追加博客和作者的版权信息.
 copyright:
-  enable: false
-  minCharNumber: 100 # 至少复制多少个字符就追加版权信息.
+  enable: true
+  minCharNumber: 80 # 至少复制多少个字符就追加版权信息.
   description: 本文章著作权归故忚所有，任何形式的转载都请注明出处。
 
 # Whether to activate the mathjax, this is a global configuration, but the post still does not open the mathjax rendering.
@@ -560,12 +560,12 @@ reprint:
 # DaoVoice online contact
 daovoice:
   enable: false
-  app_id:
+  app_id: 27e5be62
 
 # Tidio online contact
 tidio:
-  enable: false
-  public_key:
+  enable: true
+  public_key: bnuhsakb5kez2ofb6qddz8iz7hspsia9
 
 # 腾讯兔小巢，见https://txc.qq.com/
 tuxiaochao:
@@ -573,7 +573,7 @@ tuxiaochao:
   productId:
 #背景canvas-nest
 canvas_nest:
-  enable: false
+  enable: true
   color: 0,0,255 # 线条颜色, 默认: '0,0,0' ；三个数字分别为(R,G,B)，注意用,分割
   pointColor: 0,0,255 # 交点颜色, 默认: '0,0,0' ；三个数字分别为(R,G,B)，注意用,分割
   opacity: 0.7 # 线条透明度（0~1）, 默认: 0.5
@@ -590,7 +590,7 @@ ribbon:
 
 # 背景动态彩带.
 ribbon_dynamic:
-  enable: true
+  enable: false
 
 # sharejs文章分享模块.
 # 支持顺序，可选项目为twitter, facebook, google, qq, qzone, wechat, weibo, douban, linkedin.

