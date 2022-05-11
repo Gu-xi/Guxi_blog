@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>NSSCTF Round#1 Basic</title>
+      <link href="/2022/05/10/NSSCTF-Round1/"/>
+      <url>/2022/05/10/NSSCTF-Round1/</url>
+      
+        <content type="html"><![CDATA[<h3 id="basic-check"><a href="#basic-check" class="headerlink" title="basic_check"></a><strong>basic_check</strong></h3><p>第一次拿到web题的一血还是有点小激动的（借助了一下同队<a href="http://www.mufengnet.ltd/">暮渢</a>的思路hhh）</p><p>原题目来自<a href="https://www.ctfer.vip/">NSSCTF</a></p><p>首先我们拿到题目</p><p><img src="https://s2.loli.net/2022/05/11/KzXjMAuH1xte4qF.png" alt="1.png"></p><p>然后我们尝试按F12寻找思路，好的发现什么也没有，然后我就识图通过dirsearch查询是否有其他可以访问的网站地址</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 direarch.py -u http://<span class="number">1.14</span><span class="number">.71</span><span class="number">.254</span>:<span class="number">28</span></span><br></pre></td></tr></table></figure><p><img src="https://s2.loli.net/2022/05/11/SBpoW9yJdFwNOeH.png" alt="2.png"></p><p>两个都是主页 我们直接进入kali虚拟机  通过nikto扫一下</p><p><img src="https://s2.loli.net/2022/05/11/zGf4tuhqJPogBxe.png" alt="3.png"></p><p>漫长的等待  仔细看我们会发现</p><p><img src="https://s2.loli.net/2022/05/11/QLxgi9qsUAVCoE5.png" alt="4.png"></p><p>这个网站可以通过PUT方法  直接用firefox的扩展RESTClient</p><p><img src="https://s2.loli.net/2022/05/11/RQBpWHYCm4vqP1e.png" alt="5.png"> </p><p>上传成功，访问发现正常解析 直接蚁剑连接  在根目录下找到flag</p><p><img src="https://s2.loli.net/2022/05/11/codtSCpQWwhLFg9.png" alt="6.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
