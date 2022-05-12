@@ -1956,6 +1956,26 @@ p.search-result-summary{
     margin-bottom: 25px;
     z-index: 998;
 }
+/*直达评论按钮样式*/
+.comment-scroll {
+    position: fixed;
+    right: 15px;
+    bottom: 150px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+}
+
+.comment-scroll .btn-floating {
+    background: linear-gradient(to bottom right, #FF9999 0%, #ff6666 100%);
+    width: 38px;
+    height: 38px;
+}
+
+.comment-scroll .btn-floating i {
+    line-height: 0;
+    font-size: 1.48rem;
+}
 
 
 /* 深色模式按钮设置 */

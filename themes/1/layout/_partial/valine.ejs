@@ -255,7 +255,8 @@
                 verify: '<%- theme.valine.verify %>' === 'true',
                 visitor: '<%- theme.valine.visitor %>' === 'true',
                 avatar: '<%- theme.valine.avatar %>',
-                pageSize: '<%- theme.valine.pageSize %>',
+                pageSize: '<%- theme.valine.pageSize %>', 
+                meta: ['nick','mail'],
                 lang: '<% if (config.language == "zh-CN") { %>zh-cn<% } else { %>en<% } %>',
                 placeholder: '<%= theme.valine.placeholder %>'
             });
@@ -307,3 +308,4 @@
         })
     </script>
 <% } %>
+<%- partial('_partial/back-comment.ejs') %>
