@@ -1,13 +1,13 @@
 [{
     "avatar": "https://www.wd-ljt.com/logo.png",
     "name": "WDLJT",
-    "introduction": "Misc大佬",
+    "introduction": "刘老板-Misc大佬",
     "url": "https://www.wd-ljt.com/",
     "title": "前去学习"
 }, {
     "avatar": "https://s3.bmp.ovh/imgs/2022/04/06/dde007da2c1043d1.png",
     "name": "C1c",
-    "introduction": "教我WEB的带师、熟悉OWASP TOP10漏洞的挖掘和渗透测试流程",
+    "introduction": "陈老板-SRC大佬、WEB爷",
     "url": "https://c1c.ink/",
     "title": "前去学习"
 }, {
@@ -23,15 +23,27 @@
     "url": "http://1.15.94.35:8090/",
     "title": "前去学习"
 }, {
+    "avatar": "https://s3.bmp.ovh/imgs/2022/04/06/2d4ba4111e206c33.png",
+    "name": "bestkasscn",
+    "introduction": "余老板-密码学之父",
+    "url": "https://www.bestkasscn.com/",
+    "title": "前去学习"
+}, {
     "avatar": "https://wp.dkymore.com/wp-content/uploads/2021/04/3d1831b8eaccbcc0d1335616284d2b567155432b_full.jpg",
     "name": "dkymore",
     "introduction": "逆向分析大师",
     "url": "https://wp.dkymore.com/",
     "title": "前去学习"
 }, {
+    "avatar": "https://s3.bmp.ovh/imgs/2022/04/26/b8c811c399a52c3f.jpg",
+    "name": "Xenny",
+    "introduction": "神",
+    "url": "https://www.cnblogs.com/xenny/",
+    "title": "前去学习"
+}, {
     "avatar": "https://s3.bmp.ovh/imgs/2022/04/06/35e2c64117c4b2ce.png",
     "name": "aurorapj",
-    "introduction": "佩佳-密码学、信息检索大佬",
+    "introduction": "佩佳-信息检索大佬",
     "url": "https://aurorapj.mufengnet.ltd/",
     "title": "前去学习"
 }, {
@@ -41,27 +53,15 @@
     "url": "https://www.mufengnet.ltd/",
     "title": "前去学习"
 }, {
-    "avatar": "https://i.bmp.ovh/imgs/2022/04/26/2d1b79c0d46acb1b.jpg",
-    "name": "秋",
-    "introduction": "同队web选手",
-    "url": "http://www.wqh.ink/",
-    "title": "前去学习"
-}, {
     "avatar": "https://s3.bmp.ovh/imgs/2022/04/06/5d14ded301f007c5.jpg",
     "name": "花崽",
     "introduction": "ACM及WEB大佬",
     "url": "http://www.so2bbs.club/",
     "title": "前去学习"
 }, {
-    "avatar": "https://s3.bmp.ovh/imgs/2022/04/26/b8c811c399a52c3f.jpg",
-    "name": "Xenny",
-    "introduction": "神",
-    "url": "https://www.cnblogs.com/xenny/",
-    "title": "前去学习"
-}, {
-    "avatar": "https://s3.bmp.ovh/imgs/2022/04/06/2d4ba4111e206c33.png",
-    "name": "bestkasscn",
-    "introduction": "余老板--密码学之父",
-    "url": "https://www.bestkasscn.com/",
+    "avatar": "https://i.bmp.ovh/imgs/2022/04/26/2d1b79c0d46acb1b.jpg",
+    "name": "秋",
+    "introduction": "同队web选手",
+    "url": "http://www.wqh.ink/",
     "title": "前去学习"
 }]

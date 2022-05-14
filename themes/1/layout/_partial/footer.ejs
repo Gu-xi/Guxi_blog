@@ -23,7 +23,7 @@
             <% } %>
             <% if (theme.busuanziStatistics && theme.busuanziStatistics.totalTraffic) { %>
                 <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;<%- __('siteTotalVisits') %>:&nbsp;
+                &nbsp;&nbsp;<i class="far fa-eye"></i>&nbsp;<%- __('siteTotalVisits') %>:&nbsp;
                     <span id="busuanzi_value_site_pv" class="white-color"></span>次
             </span>
             <% } %>
@@ -33,7 +33,7 @@
                     <span id="busuanzi_value_site_uv" class="white-color"></span>人
             </span>
             <% } %>
-            
+            <br>
 
             <!-- 运行天数提醒. -->
             <% if (theme.time.enable) { %>
