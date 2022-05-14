@@ -124,7 +124,7 @@ body #bg canvas{
 .comment-scroll {
     position: fixed;
     right: 15px;
-    bottom: 150px;
+    bottom: 140px;
     padding-top: 15px;
     margin-bottom: 0;
     z-index: 998;
@@ -171,7 +171,7 @@ body {
 /*}*/
 /* 目录按钮样式修改 */
 #floating-toc-btn {
-    bottom: 165px !important;
+    bottom: 215px !important;
 }
 
 /* 返回顶部按钮样式 */
