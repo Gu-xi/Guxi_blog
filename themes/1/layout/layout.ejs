@@ -47,7 +47,7 @@
     </script>
 <% } %>
 
-<!-- 雪花特效 -->
+
 <% if (theme.snowdown.enable) { %>
     <script type="text/javascript">
         // 只在桌面版网页启用特效
@@ -58,7 +58,6 @@
     </script>
 <% } %>
 
-<!-- 鼠标星星特效 -->
 <% if (theme.mouseStar.enable) { %>
     <script type="text/javascript">
         // 只在桌面版网页启用特效
@@ -67,13 +66,6 @@
             document.write('<script type="text/javascript" src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.star) %>"><\/script>');
         }
     </script>
-<% } %>
-
-<% if (theme.tcaptcha.enable) { %>
-    <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
-    <script src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.tcaptcha) %>"></script>
-    <button id="TencentCaptcha" data-appid="<%- theme.tcaptcha.appid %>" data-cbfn="callback" type="button"
-            hidden></button>
 <% } %>
 
 <%- partial('_partial/baidu-analytics') %>
@@ -135,7 +127,7 @@
     </script>
 <% } %>
 
-<!--腾讯兔小巢-->
+
 <% if (theme.tuxiaochao.enable) { %>
     <div style="position:fixed;bottom:125px;right:16px;cursor: pointer;">
         <a title="兔小巢" href="https://support.qq.com/products/<%- theme.tuxiaochao.productId %>"><i

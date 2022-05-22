@@ -856,18 +856,17 @@ if(isset($_GET[&#39;ke">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/05/14/ACTF2020-BackupFile/">
+                <a href="/2022/05/15/NISACTF2022-babyupload/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="ACTF2020 新生赛BackupFile 1">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="NISACTF 2022">
                         
-                        <span class="card-title">ACTF2020 新生赛BackupFile 1</span>
+                        <span class="card-title">NISACTF 2022</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -877,9 +876,9 @@ if(isset($_GET[&#39;ke">
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-15
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -892,7 +891,6 @@ if(isset($_GET[&#39;ke">
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1036,16 +1034,13 @@ if(isset($_GET[&#39;ke">
             <a href="/about" target="_blank">故忚
             <br>
             
-                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">4.8k</span>
-            
             
             
                 
             
             
                 <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                &nbsp;&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
                     <span id="busuanzi_value_site_pv" class="white-color"></span>次
             </span>
             
@@ -1124,7 +1119,7 @@ if(isset($_GET[&#39;ke">
         <div class="col s12 m4 l4 social-link social-statis">
 
 
-    <a href="mailto:2122693401@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:gxmj15@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -1151,7 +1146,7 @@ if(isset($_GET[&#39;ke">
 <div class="progress-bar"></div>
 
 
-<!-- 搜索遮罩框 -->
+
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
@@ -1255,11 +1250,11 @@ $(function () {
 });
 </script>
 
-<!-- 深色模式按钮 -->
+
 <a onclick="switchNightMode()" id="sma" title="模式切换">
     <i class="fa fa-moon" id="nightMode" aria-hidden="true"></i>
 </a>
-<!-- 回到顶部按钮 -->
+
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
         <i class="fas fa-arrow-up"></i>
@@ -1317,22 +1312,14 @@ $(function () {
 
 
 
-<!-- 雪花特效 -->
-
-
-<!-- 鼠标星星特效 -->
 
 
 
-    <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
-    <script src="/libs/others/TencentCaptcha.js"></script>
-    <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button"
-            hidden></button>
 
 
-<!-- Baidu Analytics -->
 
-<!-- Baidu Push -->
+
+
 
 <script>
     (function () {
@@ -1354,37 +1341,10 @@ $(function () {
 
 
 
-    <script src="//code.tidio.co/bnuhsakb5kez2ofb6qddz8iz7hspsia9.js"></script>
-    <script>
-        $(document).ready(function () {
-            setInterval(change_Tidio, 50);
-
-            function change_Tidio() {
-                var tidio = $("#tidio-chat iframe");
-                if (tidio.css("display") == "block" && $(window).width() > 977) {
-                    document.getElementById("tidio-chat-iframe").style.bottom = ($("div#backTop.top-scroll").css("display") == "none" && $(window).width() > 977) > 0 ? "-40px" : ($("div.toc-title").length && $(window).width() > 977) > 0 ? "85px" : "20px";
-                    document.getElementById("tidio-chat-iframe").style.right = "-15px";
-                    document.getElementById("tidio-chat-iframe").style.height = parseInt(tidio.css("height")) >= 520 ? "520px" : tidio.css("height");
-                    document.getElementById("tidio-chat-iframe").style.zIndex = "997";
-                } else if (tidio.css("display") == "block" && $(window).width() > 601 && $(window).width() < 992) {
-                    document.getElementById("tidio-chat-iframe").style.bottom = ($("div#backTop.top-scroll").css("display") == "none" && 601 < $(window).width() < 992) > 0 ? "-40px" : "20px";
-                    document.getElementById("tidio-chat-iframe").style.right = "-15px";
-                    document.getElementById("tidio-chat-iframe").style.zIndex = "997";
-                } else if (tidio.css("display") == "block" && $(window).width() < 601 && parseInt(tidio.css("height")) < 230) {
-                    document.getElementById("tidio-chat-iframe").style.bottom = ($("div#backTop.top-scroll").css("display") == "none" && $(window).width() < 601) > 0 ? "-10px" : "50px";
-                    document.getElementById("tidio-chat-iframe").style.zIndex = "997";
-                }
-        //         if (tidio.css("display") == "block" && $(window).width() < 601 && parseInt(tidio.css("height")) >= 230) {
-        //             document.getElementById("tidio-chat-iframe").style.zIndex = "998";
-        //         }
-        //     }
-        // });
-    </script>
 
 
 
 
-<!--腾讯兔小巢-->
 
 
     <script type="text/javascript" color="0,0,255"
