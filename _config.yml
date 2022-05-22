@@ -109,3 +109,11 @@ prism_plugin:
   theme: 'tomorrow'
   line_number: true # default false
 
+Plugins:
+- hexo-generator-baidu-sitemap
+- hexo-generator-sitemap
+
+baidusitemap:
+    path: baidusitemap.xml
+sitemap:
+    path: sitemap.xml
