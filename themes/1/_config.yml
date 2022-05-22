@@ -12,7 +12,7 @@ menu:
   #   icon: fas fa-bookmark
   文章:
     url: /archives
-    icon: fas fa-archive
+    icon: fas fa-book
     children:
       - name: 分类
         url: /categories
@@ -20,6 +20,9 @@ menu:
       - name: 标签
         url: /tags
         icon: fas fa-tags
+      - name: 归档
+        url: /archives
+        icon: fas fa-archive
   关于我:
     url: /about
     icon: fab fa-gg
