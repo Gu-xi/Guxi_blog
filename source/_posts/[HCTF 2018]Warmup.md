@@ -4,13 +4,14 @@ date: 2022-05-14 22:08:52
 toc: false
 tags:
 - CTF
+- 代码审计
 categories: CTF
 my: HCTF2018_Warmup
 ---
 
 进入题目只有一个滑稽  我们直接F12看源码发现有一个非常明显的提示 我们直接访问source.php
 
-![image.png](https://s2.loli.net/2022/05/14/UJPSW2dD8os1lG5.png)
+![](https://s2.loli.net/2022/05/14/UJPSW2dD8os1lG5.png)
 
 得到源码
 

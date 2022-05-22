@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="故忚">
+    <meta name="keywords" content="标签: SVN 泄漏, 故忚">
     <meta name="description" content="NO SYSTEM IS SAFE!">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>故忚</title>
+    <title>标签: SVN 泄漏 | 故忚</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -224,56 +224,9 @@
 
 
 <main id="main_wrap">
-    
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
-        cursor: pointer;
-        z-index: 100;
-    }
-
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
-
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color: rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
-</style>
-
-
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item  white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
@@ -316,272 +269,144 @@
 </script>
 
 
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light scroll-down-effects">
-                    <i class="fa fa-angle-double-down"></i>
-                </a>
-
-                
-            </div>
-            <div class="cover-social-link">
-
-
-    <a href="mailto:gxmj15@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2122693401" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2122693401" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-</div>
-        </div>
     </div>
-
-    
 </div>
-
-<script>
-    $(function () {
-        let coverSlider = $('.carousel');
-
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
-        }
-
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
-
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
-
-        function restartPlay() {
-            
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
-
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
-        
-    });
-</script>
-
-
 
 <main class="content">
 
     
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
-                        <div class="dream">
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
+
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="/tags/CTF/" title="CTF: 10">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="CTF" style="background-color: #F9EBEA;">CTF
+                        <span class="tag-length">10</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6/" title="备份文件: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="备份文件" style="background-color: #F5EEF8;">备份文件
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/git-%E6%B3%84%E6%BC%8F/" title="git 泄漏: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="git 泄漏" style="background-color: #D5F5E3;">git 泄漏
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/SVN-%E6%B3%84%E6%BC%8F/" title="SVN 泄漏: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="SVN 泄漏" style="background-color: #E8F8F5;">SVN 泄漏
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/HG-%E6%B3%84%E6%BC%8F/" title="HG 泄漏: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="HG 泄漏" style="background-color: #FEF9E7;">HG 泄漏
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/DAV/" title="DAV: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="DAV" style="background-color: #F8F9F9;">DAV
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/php%E4%BC%AA%E5%8D%8F%E8%AE%AE/" title="php伪协议: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="php伪协议" style="background-color: #82E0AA;">php伪协议
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/RCE/" title="RCE: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="RCE" style="background-color: #D7BDE2;">RCE
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/SSTI/" title="SSTI: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="SSTI" style="background-color: #A3E4D7;">SSTI
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" title="代码审计: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="代码审计" style="background-color: #85C1E9;">代码审计
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E4%BA%8C%E6%AC%A1%E6%B3%A8%E5%85%A5/" title="二次注入: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="二次注入" style="background-color: #F8C471;">二次注入
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" title="反序列化: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="反序列化" style="background-color: #F9E79F;">反序列化
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+            </div>
         </div>
     </div>
 </div>
 
-                    
-
-                    
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
     
 
-    
-
-    <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
-        <div class="row article-row">
+        <div class="row tags-posts">
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/05/14/ACTF2020-BackupFile/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="ACTF2020 新生赛BackupFile 1">
-                            
-                            <span class="card-title">ACTF2020 新生赛BackupFile 1</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                这种题目看标题backupfile，之前在攻防世界做过类似的题目直接跟上&#x2F;index.php.bak拿到文件
-进行代码审计
-&lt;?php
-include_once "flag.php";
-
-if(isset($_GET['ke
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/CTF/" class="post-category">
-                                    CTF
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/CTF/">
-                            <span class="chip bg-color">CTF</span>
-                        </a>
-                        
-                        <a href="/tags/%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6/">
-                            <span class="chip bg-color">备份文件</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/05/14/php1/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="极客大挑战 2019PHP 1">
-                            
-                            <span class="card-title">极客大挑战 2019PHP 1</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                打开题目看见猫猫的动画，非常的简陋（bushi）大佬制作的动画还是很强
-
-按F12没有任何提示，看见题目说的备份文件，就直接去扫了目录，发现了www.zip，直接去访问下载了网站源码
-
-直接打开flag.php好拿到flag本题结束
-怎么可
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/CTF/" class="post-category">
-                                    CTF
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/CTF/">
-                            <span class="chip bg-color">CTF</span>
-                        </a>
-                        
-                        <a href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/">
-                            <span class="chip bg-color">反序列化</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4" data-tags="CTF, 备份文件, git 泄漏, SVN 泄漏, HG 泄漏" data-aos="fade-up">
                 <div class="card">
                     <a href="/2022/05/14/CTFHUB_information-leakage/">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             
                             <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="CTFHUB-信息泄漏">
@@ -589,16 +414,7 @@ if(isset($_GET['ke
                             <span class="card-title">CTFHUB-信息泄漏</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                目录遍历看到题目我们一个一个找就找到答案
-PHPINFO直接command+F（Windows是control+F）搜索flag直接拿到
-备份文件下载网站源码直接扫后台，下载源码，打开flag发现没有，直接去访问拿到flag
-bak文件看到
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
@@ -608,245 +424,19 @@ bak文件看到
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
                                 <a href="/categories/CTF/" class="post-category">
-                                    CTF
+                                CTF
                                 </a>
                                 
                                 
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/CTF/">
-                            <span class="chip bg-color">CTF</span>
-                        </a>
-                        
-                        <a href="/tags/%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6/">
-                            <span class="chip bg-color">备份文件</span>
-                        </a>
-                        
-                        <a href="/tags/git-%E6%B3%84%E6%BC%8F/">
-                            <span class="chip bg-color">git 泄漏</span>
-                        </a>
-                        
-                        <a href="/tags/SVN-%E6%B3%84%E6%BC%8F/">
-                            <span class="chip bg-color">SVN 泄漏</span>
-                        </a>
-                        
-                        <a href="/tags/HG-%E6%B3%84%E6%BC%8F/">
-                            <span class="chip bg-color">HG 泄漏</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/05/14/CTFHUB_prerequisite-skills/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="CTFHUB-WEB前置技能">
-                            
-                            <span class="card-title">CTFHUB-WEB前置技能</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                请求方式
-翻译一下：
-HTTP 方法是 GET
-使用CTFHUB方法，我给你flag。
-提示：如果你遇到「HTTP Method Not Allowed」错误，你应该请求 index.php。
-非常明显，直接burp抓包该请求方式为CTFH
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/CTF/" class="post-category">
-                                    CTF
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/CTF/">
-                            <span class="chip bg-color">CTF</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/05/14/SWPUCTF_freshman-match/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="SWPUCTF 2021 新生赛">
-                            
-                            <span class="card-title">SWPUCTF 2021 新生赛</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                部分题目WP
-PseudoProtocols(伪协议)看到题目就是伪协议   直接用下面代码查看hint.php
-?wllm=php://filter/read=convert.base64-encode/resource=hint.php
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/CTF/" class="post-category">
-                                    CTF
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/CTF/">
-                            <span class="chip bg-color">CTF</span>
-                        </a>
-                        
-                        <a href="/tags/php%E4%BC%AA%E5%8D%8F%E8%AE%AE/">
-                            <span class="chip bg-color">php伪协议</span>
-                        </a>
-                        
-                        <a href="/tags/RCE/">
-                            <span class="chip bg-color">RCE</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/05/14/XDCTF_2015_Filemanager/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="XDCTF 2015Filemanager">
-                            
-                            <span class="card-title">XDCTF 2015Filemanager</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                拿到题目  以为是文件上传简单题目 后面多次碰壁发现一点也不简单！
-
-我们看见rename部分  想通过rename更改文件后缀  但这里显示只包含文件名称
-
-试图寻找源码  通过dirserarch扫描  我们找到了一个&#x2F;www
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/CTF/" class="post-category">
-                                    CTF
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/CTF/">
-                            <span class="chip bg-color">CTF</span>
-                        </a>
-                        
-                        <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/">
-                            <span class="chip bg-color">代码审计</span>
-                        </a>
-                        
-                        <a href="/tags/%E4%BA%8C%E6%AC%A1%E6%B3%A8%E5%85%A5/">
-                            <span class="chip bg-color">二次注入</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
             
         </div>
     </article>
-
 </main>
-
-
-<div class="container paging">
-    <div class="row">
-        <div class="col s6 m4 l4">
-            
-            <a class="left btn-floating btn-large disabled">
-                <i class="fas fa-angle-left"></i>
-            </a>
-            
-        </div>
-        <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">1 / 2</div>
-        </div>
-        <div class="col s6 m4 l4">
-            
-            <a href="/page/2/"
-               class="right btn-floating btn-large waves-effect waves-light bg-color">
-                <i class="fas fa-angle-right"></i>
-            </a>
-            
-        </div>
-    </div>
-</div>
 
 
 

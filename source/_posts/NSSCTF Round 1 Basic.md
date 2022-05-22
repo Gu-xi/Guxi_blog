@@ -1,14 +1,13 @@
 ---
-title: NSSCTF Round#1 Basic
+title: NSSCTF Round#1 Basic_check
 date: 2022-05-10 01:51:57
 toc: false
 tags: 
-    - CTF
+- CTF
+- DAV
 categories: CTF
 my: NSSCTF-Round1
 ---
-
-### **basic_check** 
 
 第一次拿到web题的一血还是有点小激动的（借助了一下同队[暮渢](http://www.mufengnet.ltd)的思路hhh）
 

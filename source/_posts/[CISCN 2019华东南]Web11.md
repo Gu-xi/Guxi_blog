@@ -3,7 +3,8 @@ title: CISCN 2019华东南Web11
 date: 2022-05-14 22:10:34
 toc: false
 tags:
-    - CTF
+- CTF
+- SSTI
 categories: CTF
 my: CISCN2019_Web11
 ---
