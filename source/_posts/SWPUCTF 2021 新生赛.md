@@ -3,7 +3,7 @@ title: SWPUCTF 2021 新生赛
 date: 2022-05-14 22:12:01
 tags:
 - CTF
-- php伪协议
+- PHP伪协议
 - RCE
 categories: CTF
 my: SWPUCTF_freshman-match

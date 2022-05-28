@@ -305,11 +305,11 @@
                 
                 
                 
-                <a href="/categories/CTF/" title="CTF: 10">
+                <a href="/categories/CTF/" title="CTF: 16">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
                             style="background-color: #F9EBEA;">CTF
-                        <span class="tag-length">10</span>
+                        <span class="tag-length">16</span>
                     </span>
                 </a>
                 
@@ -327,25 +327,24 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2022/05/14/CISCN2019_Web11/">
+                    <a href="/2022/05/14/ACTF2020-BackupFile/">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="CISCN 2019华东南Web11">
+                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="ACTF2020 新生赛BackupFile 1">
                             
-                            <span class="card-title">CISCN 2019华东南Web11</span>
+                            <span class="card-title">ACTF2020 新生赛BackupFile 1</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                拿到题目  我只看见满屏的IP  
+                                这种题目看标题backupfile，之前在攻防世界做过类似的题目直接跟上&#x2F;index.php.bak拿到文件
+进行代码审计
+&lt;?php
+include_once "flag.php";
 
-第一时间想到这道题与IP有关系 打开我们的hackbar尝试修改X-Forwarded-For的值  发现右上角有了变化
-
-
-尝试获取根目录下文件
-&#123;system(&#39;ls&#39;)&
+if(isset($_GET['ke
                             
                         </div>
                         <div class="publish-info">
@@ -372,8 +371,8 @@
                             <span class="chip bg-color">CTF</span>
                         </a>
                         
-                        <a href="/tags/SSTI/">
-                            <span class="chip bg-color">SSTI</span>
+                        <a href="/tags/%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6/">
+                            <span class="chip bg-color">备份文件</span>
                         </a>
                         
                     </div>
@@ -383,26 +382,250 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2022/05/14/HCTF2018_Warmup/">
+                    <a href="/2022/05/14/php1/">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="HCTF 2018 Warmup">
+                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="极客大挑战 2019PHP 1">
                             
-                            <span class="card-title">HCTF 2018 Warmup</span>
+                            <span class="card-title">极客大挑战 2019PHP 1</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                进入题目只有一个滑稽  我们直接F12看源码发现有一个非常明显的提示 我们直接访问source.php
+                                打开题目看见猫猫的动画，非常的简陋（bushi）大佬制作的动画还是很强
 
-得到源码
-&lt;?php
-    highlight_file(__FILE__);
-    class emmm
-    {
-  
+按F12没有任何提示，看见题目说的备份文件，就直接去扫了目录，发现了www.zip，直接去访问下载了网站源码
+
+直接打开flag.php好拿到flag本题结束
+怎么可
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/CTF/" class="post-category">
+                                    CTF
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/CTF/">
+                            <span class="chip bg-color">CTF</span>
+                        </a>
+                        
+                        <a href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/">
+                            <span class="chip bg-color">反序列化</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/05/14/CTFHUB_information-leakage/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="CTFHUB-信息泄漏">
+                            
+                            <span class="card-title">CTFHUB-信息泄漏</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                目录遍历看到题目我们一个一个找就找到答案
+PHPINFO直接command+F（Windows是control+F）搜索flag直接拿到
+备份文件下载网站源码直接扫后台，下载源码，打开flag发现没有，直接去访问拿到flag
+bak文件看到
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/CTF/" class="post-category">
+                                    CTF
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/CTF/">
+                            <span class="chip bg-color">CTF</span>
+                        </a>
+                        
+                        <a href="/tags/%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6/">
+                            <span class="chip bg-color">备份文件</span>
+                        </a>
+                        
+                        <a href="/tags/git-%E6%B3%84%E6%BC%8F/">
+                            <span class="chip bg-color">git 泄漏</span>
+                        </a>
+                        
+                        <a href="/tags/SVN-%E6%B3%84%E6%BC%8F/">
+                            <span class="chip bg-color">SVN 泄漏</span>
+                        </a>
+                        
+                        <a href="/tags/HG-%E6%B3%84%E6%BC%8F/">
+                            <span class="chip bg-color">HG 泄漏</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/05/14/CTFHUB_prerequisite-skills/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="CTFHUB-WEB前置技能">
+                            
+                            <span class="card-title">CTFHUB-WEB前置技能</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                请求方式
+翻译一下：
+HTTP 方法是 GET
+使用CTFHUB方法，我给你flag。
+提示：如果你遇到「HTTP Method Not Allowed」错误，你应该请求 index.php。
+非常明显，直接burp抓包该请求方式为CTFH
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/CTF/" class="post-category">
+                                    CTF
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/CTF/">
+                            <span class="chip bg-color">CTF</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/05/14/SWPUCTF_freshman-match/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="SWPUCTF 2021 新生赛">
+                            
+                            <span class="card-title">SWPUCTF 2021 新生赛</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                部分题目WP
+PseudoProtocols(伪协议)看到题目就是伪协议   直接用下面代码查看hint.php
+?wllm=php://filter/read=convert.base64-encode/resource=hint.php
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/CTF/" class="post-category">
+                                    CTF
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/CTF/">
+                            <span class="chip bg-color">CTF</span>
+                        </a>
+                        
+                        <a href="/tags/php%E4%BC%AA%E5%8D%8F%E8%AE%AE/">
+                            <span class="chip bg-color">php伪协议</span>
+                        </a>
+                        
+                        <a href="/tags/RCE/">
+                            <span class="chip bg-color">RCE</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/05/14/XDCTF_2015_Filemanager/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="XDCTF 2015Filemanager">
+                            
+                            <span class="card-title">XDCTF 2015Filemanager</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                拿到题目  以为是文件上传简单题目 后面多次碰壁发现一点也不简单！
+
+我们看见rename部分  想通过rename更改文件后缀  但这里显示只包含文件名称
+
+试图寻找源码  通过dirserarch扫描  我们找到了一个&#x2F;www
                             
                         </div>
                         <div class="publish-info">
@@ -433,120 +656,8 @@
                             <span class="chip bg-color">代码审计</span>
                         </a>
                         
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/05/11/esay_eval/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="天翼杯2021 esay_eval">
-                            
-                            <span class="card-title">天翼杯2021 esay_eval</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                题目源码：
-&lt;?php
-class A{
-    public $code = "";
-    function __call($method,$args){
-        eval($this->code);
-        
- 
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-11
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/CTF/" class="post-category">
-                                    CTF
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/CTF/">
-                            <span class="chip bg-color">CTF</span>
-                        </a>
-                        
-                        <a href="/tags/RCE/">
-                            <span class="chip bg-color">RCE</span>
-                        </a>
-                        
-                        <a href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/">
-                            <span class="chip bg-color">反序列化</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/05/10/NSSCTF-Round1/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="NSSCTF Round#1 Basic_check">
-                            
-                            <span class="card-title">NSSCTF Round#1 Basic_check</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                第一次拿到web题的一血还是有点小激动的（借助了一下同队暮渢的思路hhh）
-原题目来自NSSCTF
-首先我们拿到题目
-
-然后我们尝试按F12寻找思路，好的发现什么也没有，然后我就识图通过dirsearch查询是否有其他可以访问的网站地址
-p
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-10
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/CTF/" class="post-category">
-                                    CTF
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/CTF/">
-                            <span class="chip bg-color">CTF</span>
-                        </a>
-                        
-                        <a href="/tags/DAV/">
-                            <span class="chip bg-color">DAV</span>
+                        <a href="/tags/%E4%BA%8C%E6%AC%A1%E6%B3%A8%E5%85%A5/">
+                            <span class="chip bg-color">二次注入</span>
                         </a>
                         
                     </div>
@@ -570,11 +681,12 @@ p
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">2 / 2</div>
+            <div class="center-align b-text-gray">2 / 3</div>
         </div>
         <div class="col s6 m4 l4">
             
-            <a class="right btn-floating btn-large disabled">
+            <a href="/categories/CTF/page/3/"
+               class="right btn-floating btn-large waves-effect waves-light bg-color">
                 <i class="fas fa-angle-right"></i>
             </a>
             

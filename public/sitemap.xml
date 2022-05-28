@@ -2,6 +2,60 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gx.xmj.ink/2022/05/28/HardSQL/</loc>
+    
+    <lastmod>2022-05-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gx.xmj.ink/2022/05/28/ZJCTF-2019-NiZhuanSiWei/</loc>
+    
+    <lastmod>2022-05-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gx.xmj.ink/2022/05/28/Easy_md5/</loc>
+    
+    <lastmod>2022-05-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gx.xmj.ink/2022/05/28/HCTF_2018_admin/</loc>
+    
+    <lastmod>2022-05-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gx.xmj.ink/2022/05/28/Buyflag/</loc>
+    
+    <lastmod>2022-05-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gx.xmj.ink/2022/05/27/easy_tornado/</loc>
+    
+    <lastmod>2022-05-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://gx.xmj.ink/2022/05/14/ACTF2020-BackupFile/</loc>
     
     <lastmod>2022-05-22</lastmod>
@@ -139,7 +193,7 @@
 
   <url>
     <loc>https://gx.xmj.ink/</loc>
-    <lastmod>2022-05-22</lastmod>
+    <lastmod>2022-05-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -147,84 +201,84 @@
   
   <url>
     <loc>https://gx.xmj.ink/tags/CTF/</loc>
-    <lastmod>2022-05-22</lastmod>
+    <lastmod>2022-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gx.xmj.ink/tags/%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6/</loc>
-    <lastmod>2022-05-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gx.xmj.ink/tags/git-%E6%B3%84%E6%BC%8F/</loc>
-    <lastmod>2022-05-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gx.xmj.ink/tags/SVN-%E6%B3%84%E6%BC%8F/</loc>
-    <lastmod>2022-05-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gx.xmj.ink/tags/HG-%E6%B3%84%E6%BC%8F/</loc>
-    <lastmod>2022-05-22</lastmod>
+    <lastmod>2022-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gx.xmj.ink/tags/DAV/</loc>
-    <lastmod>2022-05-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gx.xmj.ink/tags/SSTI/</loc>
-    <lastmod>2022-05-22</lastmod>
+    <lastmod>2022-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gx.xmj.ink/tags/php%E4%BC%AA%E5%8D%8F%E8%AE%AE/</loc>
-    <lastmod>2022-05-22</lastmod>
+    <lastmod>2022-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gx.xmj.ink/tags/RCE/</loc>
-    <lastmod>2022-05-22</lastmod>
+    <lastmod>2022-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gx.xmj.ink/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</loc>
-    <lastmod>2022-05-22</lastmod>
+    <lastmod>2022-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gx.xmj.ink/tags/%E4%BA%8C%E6%AC%A1%E6%B3%A8%E5%85%A5/</loc>
-    <lastmod>2022-05-22</lastmod>
+    <lastmod>2022-05-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gx.xmj.ink/tags/git-%E6%B3%84%E6%BC%8F/</loc>
+    <lastmod>2022-05-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gx.xmj.ink/tags/SVN-%E6%B3%84%E6%BC%8F/</loc>
+    <lastmod>2022-05-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gx.xmj.ink/tags/HG-%E6%B3%84%E6%BC%8F/</loc>
+    <lastmod>2022-05-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gx.xmj.ink/tags/SSTI/</loc>
+    <lastmod>2022-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gx.xmj.ink/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</loc>
-    <lastmod>2022-05-22</lastmod>
+    <lastmod>2022-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -233,7 +287,7 @@
   
   <url>
     <loc>https://gx.xmj.ink/categories/CTF/</loc>
-    <lastmod>2022-05-22</lastmod>
+    <lastmod>2022-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

