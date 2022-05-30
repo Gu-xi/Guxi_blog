@@ -2,9 +2,8 @@
 title: BJDCTF 2020 Easy MD5
 date: 2022-05-28 21:34:10
 tags:
-- CTF
 - MD5绕过
-categories: CTF
+categories: CTF-Web
 my: Easy_md5
 ---
 

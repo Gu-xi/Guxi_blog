@@ -3,9 +3,8 @@ title: HCTF 2018 Warmup
 date: 2022-05-14 22:08:52
 toc: false
 tags:
-- CTF
 - 代码审计
-categories: CTF
+categories: CTF-Web
 my: HCTF2018_Warmup
 ---
 

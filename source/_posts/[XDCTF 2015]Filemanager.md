@@ -3,10 +3,9 @@ title: XDCTF 2015Filemanager
 date: 2022-05-14 22:11:24
 toc: false
 tags:
-- CTF
 - 代码审计
 - 二次注入
-categories: CTF
+categories: CTF-Web
 my: XDCTF_2015_Filemanager
 ---
 

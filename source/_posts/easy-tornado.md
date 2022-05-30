@@ -3,9 +3,8 @@ title: Easy_tornado
 date: 2022-05-27 20:55:57
 toc: false
 tags:
-- CTF
 - SSTI
-categories: CTF
+categories: CTF-Web
 my: easy_tornado
 ---
 

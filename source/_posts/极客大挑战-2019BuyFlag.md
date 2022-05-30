@@ -3,9 +3,8 @@ title: 极客大挑战 2019 BuyFlag
 date: 2022-05-28 19:43:02
 toc: false
 tags:
-- CTF
 - 数组绕过
-categories: CTF
+categories: CTF-Web
 my: Buyflag
 ---
 

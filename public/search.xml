@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>GXYCTF 2019 Ping Ping Ping</title>
+      <link href="/2022/05/30/Ping_Ping_ping/"/>
+      <url>/2022/05/30/Ping_Ping_ping/</url>
+      
+        <content type="html"><![CDATA[<p>打开题目开门见山直接告诉我们可以进行命令执行</p><p>首先这道题是ping我们先ping一下本地，好的执行的非常的慢，而Linux命令执行我们可以直接通过<code>;</code>进行后面的命令执行首先我们执行<code>ls</code></p><pre><code>?ip=;ls</code></pre><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220530142548886.png"></p><p>太友好了这道题，我们只需要<code>cat flag</code> 好直接结束</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220530142640834.png"></p><p>过滤了空格，我们直接把空格改为<code>$IFS$1</code>，然后又出现了</p><p><img src="https://nssctf.wdf.ink/img/xmj/image-20220530142740533.png"></p><p>这种直接拼接绕过拿到flag</p><p>payload:</p><pre><code>?ip=;b=ag;cat$IFS$1fl$b.php</code></pre><p>开始 以为自己做错了,一直没有回显，后面一直检查发现这个flag藏在源码里</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF-Web </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 命令执行 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>极客大挑战 2019 HardSQL</title>
       <link href="/2022/05/28/HardSQL/"/>
       <url>/2022/05/28/HardSQL/</url>
@@ -13,14 +38,14 @@
       
       <categories>
           
-          <category> CTF </category>
+          <category> CTF-Web </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> CTF </tag>
+            <tag> SQL注入 </tag>
             
         </tags>
       
@@ -38,14 +63,16 @@
       
       <categories>
           
-          <category> CTF </category>
+          <category> CTF-Web </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> CTF </tag>
+            <tag> PHP伪协议 </tag>
+            
+            <tag> 反序列化 </tag>
             
         </tags>
       
@@ -63,14 +90,14 @@
       
       <categories>
           
-          <category> CTF </category>
+          <category> CTF-Web </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> CTF </tag>
+            <tag> MD5绕过 </tag>
             
         </tags>
       
@@ -88,14 +115,14 @@
       
       <categories>
           
-          <category> CTF </category>
+          <category> CTF-Web </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> CTF </tag>
+            <tag> Session伪造 </tag>
             
         </tags>
       
@@ -113,14 +140,14 @@
       
       <categories>
           
-          <category> CTF </category>
+          <category> CTF-Web </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> CTF </tag>
+            <tag> 数组绕过 </tag>
             
         </tags>
       
@@ -138,14 +165,12 @@
       
       <categories>
           
-          <category> CTF </category>
+          <category> CTF-Web </category>
           
       </categories>
       
       
         <tags>
-            
-            <tag> CTF </tag>
             
             <tag> SSTI </tag>
             
@@ -165,14 +190,12 @@
       
       <categories>
           
-          <category> CTF </category>
+          <category> CTF-Web </category>
           
       </categories>
       
       
         <tags>
-            
-            <tag> CTF </tag>
             
             <tag> 备份文件 </tag>
             
@@ -192,14 +215,12 @@
       
       <categories>
           
-          <category> CTF </category>
+          <category> CTF-Web </category>
           
       </categories>
       
       
         <tags>
-            
-            <tag> CTF </tag>
             
             <tag> 反序列化 </tag>
             
@@ -219,14 +240,12 @@
       
       <categories>
           
-          <category> CTF </category>
+          <category> CTF-Web </category>
           
       </categories>
       
       
         <tags>
-            
-            <tag> CTF </tag>
             
             <tag> 备份文件 </tag>
             
@@ -252,14 +271,14 @@
       
       <categories>
           
-          <category> CTF </category>
+          <category> CTF-Web </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> CTF </tag>
+            <tag> HTTP </tag>
             
         </tags>
       
@@ -277,16 +296,14 @@
       
       <categories>
           
-          <category> CTF </category>
+          <category> CTF-Web </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> CTF </tag>
-            
-            <tag> php伪协议 </tag>
+            <tag> PHP伪协议 </tag>
             
             <tag> RCE </tag>
             
@@ -306,14 +323,12 @@
       
       <categories>
           
-          <category> CTF </category>
+          <category> CTF-Web </category>
           
       </categories>
       
       
         <tags>
-            
-            <tag> CTF </tag>
             
             <tag> 代码审计 </tag>
             
@@ -335,14 +350,12 @@
       
       <categories>
           
-          <category> CTF </category>
+          <category> CTF-Web </category>
           
       </categories>
       
       
         <tags>
-            
-            <tag> CTF </tag>
             
             <tag> SSTI </tag>
             
@@ -362,14 +375,12 @@
       
       <categories>
           
-          <category> CTF </category>
+          <category> CTF-Web </category>
           
       </categories>
       
       
         <tags>
-            
-            <tag> CTF </tag>
             
             <tag> 代码审计 </tag>
             
@@ -389,14 +400,12 @@
       
       <categories>
           
-          <category> CTF </category>
+          <category> CTF-Web </category>
           
       </categories>
       
       
         <tags>
-            
-            <tag> CTF </tag>
             
             <tag> RCE </tag>
             
@@ -418,14 +427,12 @@
       
       <categories>
           
-          <category> CTF </category>
+          <category> CTF-Web </category>
           
       </categories>
       
       
         <tags>
-            
-            <tag> CTF </tag>
             
             <tag> DAV </tag>
             

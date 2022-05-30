@@ -3,10 +3,9 @@ title: 天翼杯2021 esay_eval
 date: 2022-05-11 20:41:07
 toc: false
 tags: 
-    - CTF
-    - 反序列化
-    - RCE
-categories: CTF
+- 反序列化
+- RCE
+categories: CTF-Web
 my: esay_eval
 ---
 

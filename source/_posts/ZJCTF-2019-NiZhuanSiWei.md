@@ -3,10 +3,9 @@ title: ZJCTF 2019 NiZhuanSiWei
 date: 2022-05-28 21:59:12
 toc: false
 tags:
-- CTF
 - 反序列化
 - PHP伪协议
-categories: CTF
+categories: CTF-Web
 my: ZJCTF-2019-NiZhuanSiWei
 ---
 

@@ -3,9 +3,8 @@ title: NSSCTF Round#1 Basic_check
 date: 2022-05-10 01:51:57
 toc: false
 tags: 
-- CTF
 - DAV
-categories: CTF
+categories: CTF-Web
 my: NSSCTF-Round1
 ---
 

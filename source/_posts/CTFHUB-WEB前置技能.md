@@ -2,8 +2,8 @@
 title: CTFHUB-WEB前置技能
 date: 2022-05-14 22:12:16
 tags:
-- CTF
-categories: CTF
+- HTTP
+categories: CTF-Web
 my: CTFHUB_prerequisite-skills
 ---
 

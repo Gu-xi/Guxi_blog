@@ -3,9 +3,8 @@ title: ACTF2020 新生赛BackupFile 1
 date: 2022-05-14 22:13:33
 toc: false
 tags:
-- CTF
 - 备份文件
-categories: CTF
+categories: CTF-Web
 my: ACTF2020-BackupFile
 ---
 

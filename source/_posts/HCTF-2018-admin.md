@@ -3,9 +3,8 @@ title: HCTF 2018 admin
 date: 2022-05-28 20:03:15
 toc: false
 tags:
-- CTF
 - Session伪造
-categories: CTF
+categories: CTF-Web
 my: HCTF_2018_admin
 ---
 

@@ -2,12 +2,11 @@
 title: CTFHUB-信息泄漏
 date: 2022-05-14 22:12:33
 tags:
-- CTF
 - 备份文件
 - git 泄漏
 - SVN 泄漏
 - HG 泄漏
-categories: CTF
+categories: CTF-Web
 my: CTFHUB_information-leakage
 ---
 

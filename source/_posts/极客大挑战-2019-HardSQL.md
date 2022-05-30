@@ -3,9 +3,8 @@ title: 极客大挑战 2019 HardSQL
 date: 2022-05-28 22:18:38
 toc: false
 tags:
-- CTF
 - SQL注入
-categories: CTF
+categories: CTF-Web
 my: HardSQL
 ---
 
